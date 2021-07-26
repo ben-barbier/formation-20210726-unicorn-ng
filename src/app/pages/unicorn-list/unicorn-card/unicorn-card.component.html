@@ -3,7 +3,7 @@
     name: {{ unicorn.name }}
     photo: <img alt="photo" [src]="unicorn.photo">
     weight: {{ unicorn.weight }}
-    age: {{ age }}
+    age: {{ unicorn.birthyear | age:{oldPlaceholder: '👴', youngPlaceholder: '🐣'} }}
     hobbies: {{ unicorn.hobbies }}
     capacities: {{ unicorn.capacities }}
     <button type="button" (click)="delete()">🗑</button>
