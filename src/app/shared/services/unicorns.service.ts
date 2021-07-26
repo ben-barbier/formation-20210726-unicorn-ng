@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Unicorn } from '../models/unicorn.model';
 import { environment } from '../../../environments/environment';
 import { Observable } from 'rxjs';
+import { tap } from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root',

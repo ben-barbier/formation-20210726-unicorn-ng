@@ -4,9 +4,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UnicornListComponent } from './pages/unicorn-list/unicorn-list.component';
+import { UnicornCardComponent } from './pages/unicorn-list/unicorn-card/unicorn-card.component';
 
 @NgModule({
-    declarations: [AppComponent, UnicornListComponent],
+    declarations: [AppComponent, UnicornListComponent, UnicornCardComponent],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule],
     providers: [],
     bootstrap: [AppComponent],

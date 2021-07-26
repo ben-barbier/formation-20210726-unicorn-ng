@@ -1,12 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { UnicornsService } from '../../shared/services/unicorns.service';
+import { Unicorn } from '../../shared/models/unicorn.model';
 
 @Component({
     selector: 'app-unicorn-list',
     templateUrl: './unicorn-list.component.html',
     styleUrls: ['./unicorn-list.component.scss'],
 })
-export class UnicornListComponent implements OnInit {
-    constructor() {}
+export class UnicornListComponent {
+    public unicorns: Unicorn[] = [];
 
-    ngOnInit(): void {}
+    constructor(private readonly unicornsService: UnicornsService) {
+        this.unicornsService.getUnicorns().subscribe((unicorns) => (this.unicorns = unicorns));
+    }
 }
