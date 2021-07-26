@@ -13,4 +13,8 @@ export class UnicornListComponent {
     constructor(private readonly unicornsService: UnicornsService) {
         this.unicornsService.getUnicorns().subscribe((unicorns) => (this.unicorns = unicorns));
     }
+
+    public removeUnicornFromCart(unicorn: Unicorn): void {
+        this.unicorns = this.unicorns.filter((u) => u.id !== unicorn.id);
+    }
 }
