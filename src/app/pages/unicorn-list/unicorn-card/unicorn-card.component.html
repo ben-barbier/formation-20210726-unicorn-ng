@@ -14,6 +14,8 @@
     </mat-card-content>
     <mat-card-actions>
         <button type="button" mat-mini-fab color="warn" (click)="delete()"><mat-icon>delete</mat-icon></button>
-        <button type="button" mat-mini-fab color="primary"><mat-icon>favorite</mat-icon></button>
+        <button type="button" mat-mini-fab [color]="(isInCart$ | async) ? 'warn' : 'primary'" (click)="toggle()">
+            <mat-icon>favorite</mat-icon>
+        </button>
     </mat-card-actions>
 </mat-card>

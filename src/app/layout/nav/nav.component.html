@@ -20,6 +20,8 @@
                 <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
             </button>
             <span>unicorn-ng</span>
+            <div class="spacer"></div>
+            <div>{{ cartCount$ | async }}</div>
         </mat-toolbar>
         <!-- Add Content Here -->
         <!-- TODO: Quand on aura un router, le brancher ici :       -->
