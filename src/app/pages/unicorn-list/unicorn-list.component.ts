@@ -11,7 +11,7 @@ export class UnicornListComponent {
     public unicorns: Unicorn[] = [];
 
     constructor(private readonly unicornsService: UnicornsService) {
-        this.unicornsService.getUnicorns().subscribe((unicorns) => (this.unicorns = unicorns));
+        this.unicornsService.getUnicornsWithCapacitiesLabels().subscribe((unicorns) => (this.unicorns = unicorns));
     }
 
     public removeUnicornFromCart(unicorn: Unicorn): void {

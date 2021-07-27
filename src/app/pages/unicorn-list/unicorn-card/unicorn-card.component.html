@@ -6,5 +6,6 @@
     age: {{ unicorn.birthyear | age:{oldPlaceholder: '👴', youngPlaceholder: '🐣'} }}
     hobbies: {{ unicorn.hobbies }}
     capacities: {{ unicorn.capacities }}
+    capacities labels: {{ unicorn.capacitiesLabels | json }}
     <button type="button" (click)="delete()">🗑</button>
 </pre>
