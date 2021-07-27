@@ -6,11 +6,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UnicornCardComponent } from './pages/unicorn-list/unicorn-card/unicorn-card.component';
 import { UnicornListComponent } from './pages/unicorn-list/unicorn-list.component';
+import { MaterialModule } from './shared/material.module';
 import { AgePipe } from './shared/pipes/age.pipe';
 
 @NgModule({
     declarations: [AppComponent, UnicornListComponent, UnicornCardComponent, AgePipe],
-    imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
+    imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MaterialModule],
     providers: [],
     bootstrap: [AppComponent],
 })
