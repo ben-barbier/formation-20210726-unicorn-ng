@@ -1,5 +1,5 @@
 <p>Bonne nouvelle, il reste {{ unicorns.length }} licornes à adopter 🚀 !!!</p>
 
-<mat-icon>favorite</mat-icon>
+<mat-icon>border_outer</mat-icon>
 
 <app-unicorn-card *ngFor="let unicorn of unicorns" [unicorn]="unicorn" (deleted)="removeUnicornFromCart(unicorn)"></app-unicorn-card>
