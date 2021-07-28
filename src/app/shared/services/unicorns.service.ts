@@ -12,6 +12,14 @@ import { CapacitiesService } from './capacities.service';
 export class UnicornsService {
     constructor(private readonly http: HttpClient, private readonly capacitiesService: CapacitiesService) {}
 
+    public updateUnicorn(unicorn: Unicorn): Observable<void> {
+        return this.http.put<void>(`${environment.apiUrl}/unicorns/${unicorn.id}`, unicorn);
+    }
+
+    public deleteUnicorn(unicorn: Unicorn): Observable<void> {
+        return this.http.delete<void>(`${environment.apiUrl}/unicorns/${unicorn.id}`);
+    }
+
     public getUnicorns(): Observable<Unicorn[]> {
         return this.http.get<Unicorn[]>(`${environment.apiUrl}/unicorns`).pipe(
             concatAll(),

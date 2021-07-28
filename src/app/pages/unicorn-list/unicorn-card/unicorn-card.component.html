@@ -17,5 +17,6 @@
         <button type="button" mat-mini-fab [color]="(isInCart$ | async) ? 'warn' : 'primary'" (click)="toggle()">
             <mat-icon>favorite</mat-icon>
         </button>
+        <button type="button" mat-mini-fab color="primary" (click)="edit()"><mat-icon>edit</mat-icon></button>
     </mat-card-actions>
 </mat-card>
