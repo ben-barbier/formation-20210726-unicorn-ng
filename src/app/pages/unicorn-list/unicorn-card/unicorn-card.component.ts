@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { map } from 'rxjs/operators';
+import { filter, map, switchMap } from 'rxjs/operators';
 import { Unicorn } from '../../../shared/models/unicorn.model';
 import { CartService } from '../../../shared/services/cart.service';
 import { UnicornsService } from '../../../shared/services/unicorns.service';
@@ -35,6 +35,10 @@ export class UnicornCardComponent {
         this.dialog
             .open(UnicornEditDialogComponent, { data: { unicorn: this.unicorn } })
             .afterClosed()
-            .subscribe((updatedUnicorn) => this.unicornsService.updateUnicorn(updatedUnicorn));
+            .pipe(
+                filter((updatedUnicorn) => !!updatedUnicorn),
+                switchMap((updatedUnicorn) => this.unicornsService.updateUnicorn(updatedUnicorn))
+            )
+            .subscribe();
     }
 }
