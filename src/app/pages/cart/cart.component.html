@@ -1,0 +1,8 @@
+<ul *ngIf="cart$ | async as cart">
+    <li *ngFor="let unicorn of cart">
+        {{ unicorn.id }} - {{ unicorn.name }}
+        <button type="button" (click)="removeFromCart(unicorn)" mat-mini-fab>
+            <mat-icon>delete</mat-icon>
+        </button>
+    </li>
+</ul>

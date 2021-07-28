@@ -9,9 +9,10 @@ import { UnicornCardComponent } from './pages/unicorn-list/unicorn-card/unicorn-
 import { UnicornListComponent } from './pages/unicorn-list/unicorn-list.component';
 import { MaterialModule } from './shared/material.module';
 import { AgePipe } from './shared/pipes/age.pipe';
+import { CartComponent } from './pages/cart/cart.component';
 
 @NgModule({
-    declarations: [AppComponent, UnicornListComponent, UnicornCardComponent, AgePipe, NavComponent],
+    declarations: [AppComponent, UnicornListComponent, UnicornCardComponent, AgePipe, NavComponent, CartComponent],
     imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, MaterialModule],
     providers: [],
     bootstrap: [AppComponent],
